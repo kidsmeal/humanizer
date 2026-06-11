@@ -12,7 +12,7 @@ them.
 
 This skill teaches Claude to drop those habits when it writes or edits
 READMEs, docs, release notes, landing copy, PR descriptions, and commit
-bodies. Grammar stays correct and professional. The doc just stops sounding
+bodies. Grammar stays correct and professional. The doc stops sounding
 generated.
 
 ## Install

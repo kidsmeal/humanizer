@@ -3,7 +3,7 @@
   "name": "humanizer",
   "displayName": "Humanizer",
   "version": "0.1.0",
-  "description": "A writing skill that strips the AI cadence from generated prose: no em-dashes, no emphasis bolding, no rhetorical contrasts, no punchy closers, plain headings. Grammar stays correct; the doc just stops sounding generated.",
+  "description": "A writing skill that strips the AI cadence from generated prose: no em-dashes, no emphasis bolding, no rhetorical contrasts, no punchy closers, plain headings. Grammar stays correct; the doc stops sounding generated.",
   "author": {
     "name": "kidsmeal",
     "url": "https://github.com/kidsmeal"

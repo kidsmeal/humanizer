@@ -5,7 +5,9 @@ description: Rewrite or draft prose (READMEs, docs, release notes, landing copy,
 
 # Humanizer
 
-Make written prose read like a competent engineer wrote it for other engineers. The target is plain, direct technical writing with full correct grammar and capitalization (published prose gets full grammar even if the user chats casually). The thing to remove is the LLM *cadence*, the set of habits that make a reader think "a model wrote this."
+Make written prose read like a competent engineer wrote it for other engineers. The target is plain, direct technical writing with full correct grammar and capitalization (published prose gets full grammar even if the user chats casually). The thing to remove is the LLM cadence: the set of habits that make a reader think "a model wrote this."
+
+Scope: technical and product prose, meaning docs, READMEs, release notes, PR descriptions, and similar. If the user explicitly asks for marketing flair or a personal essay voice, their ask wins; this skill defines the default register, where flourish reads as generated.
 
 The tells below are specific and mechanical. All of them appeared in one real LLM-generated project README, and each has a concrete before/after taken from it.
 
@@ -28,7 +30,7 @@ The tells further down are surface patterns. These are the underlying rules that
 ## The tells, with real fixes
 
 ### 1. Em-dashes
-Hard rule: no em-dashes (`—`) anywhere. Not in prose, not in lists, not in commit messages. Replace with a period, a comma, parentheses, or a restructured sentence.
+Hard rule: no em-dashes (`—`) anywhere, including lists and commit messages. A spaced hyphen or en-dash doing the same job (`the fix - and it works`) counts; the rule is about the interrupting-dash construction, with the glyph as evidence. Replace with a period, a comma, parentheses, or a restructured sentence.
 
 - Before: `So however a session ends, the breadcrumb is at most one turn stale — and it follows the branch you were on.`
 - After: `The checkpoint is written after every turn, so it stays current no matter how the session ends. It's stored per branch.`
@@ -73,20 +75,24 @@ Section headings should say what the section is about in plain words a reader ca
 - Sentence-fragment list cadence used as a flourish: "Many small features in one repo, each on its own branch, each keeping its own cursor, with no manual thread-tracking." Make it a real sentence.
 - Tagline closers that wrap a section like an ad ("Focus, captured.").
 - Opening a doc by restating its own title back ("X is a tool that lets you X.").
+- Rhetorical questions as transitions ("So why does this matter?"). State the point instead of staging it.
+- Audience-pandering openers ("Whether you're a beginner or a seasoned developer...").
+- Summary wrap-ups ("In short,", "In summary,", "At the end of the day,"). If the doc needs a summary, the doc is too long.
+- The colon-snap construction ("The result: faster builds." "The catch: it only works on main."). Write the sentence out.
 
 ## How a human technical writer actually sounds
 
-- Leads with the concrete thing the reader wants (what it does, how to run it), not a mission statement.
-- Uses normal sentences of varied length. Doesn't manufacture rhythm.
+- Leads with the concrete thing the reader wants: what it does and how to run it, rather than a mission statement.
+- Uses normal sentences of varied length and doesn't manufacture rhythm.
 - Lets facts stand without a rhetorical frame around them.
-- Bolds and bullets to organize, not to perform.
+- Bolds and bullets to organize the page rather than to perform.
 - Is willing to be plain and even a little flat. Plain writing reads as honest. Flourishes read as generated.
 
 ## Revision procedure
 
 When handed a draft (or after writing one), do a dedicated pass:
 
-1. Search the text for `—`. Remove every one.
+1. Search the text for `—` and `–`, and for ` - ` used as an interrupting dash. Remove every one.
 2. Search for `**` inside running sentences. Keep only structural/label bolding; strip emphasis bolding.
 3. Read each paragraph's last sentence. If it's a fragment or a restatement that adds no fact, cut it.
 4. Find every "X, not Y" / "not A but B" construction. Keep at most one in the whole document; rewrite the rest as plain statements.
