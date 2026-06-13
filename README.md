@@ -33,9 +33,10 @@ sound less AI". It applies two layers:
 
 - Seven principles that explain why the AI cadence fails (plainness signals
   confidence, headings are navigation, emphasis is a budget, and so on).
-- Seven concrete tells with before/after examples taken from a real generated
-  README: em-dashes, inline emphasis bolding, "X, not Y" antithesis, fragment
-  closers, fake-profound restatement, cryptic headings, and filler habits.
+- Nine concrete tells with before/after examples: em-dashes, inline emphasis
+  bolding, "X, not Y" antithesis, fragment closers, fake-profound restatement,
+  cryptic headings, throat-clearing and inflated changelog verbs, emoji and
+  uniform structure, and filler habits.
 
 It ends with a mechanical revision checklist (grep for the dash, read every
 heading cold, check every paragraph's last sentence) so the cleanup pass

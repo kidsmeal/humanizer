@@ -1,6 +1,6 @@
 ---
 name: humanizer
-description: Rewrite or draft prose (READMEs, docs, release notes, landing copy, PR descriptions, commit bodies) so it reads like a working engineer wrote it rather than an LLM. Strips the AI tells: em-dashes, inline emphasis bolding, "X, not Y" antithesis, punchy fragment closers, cryptic section titles, fake-profound restatements. Use when writing or editing any human-facing prose, or when the user says "humanize this", "make this sound less AI", "this reads like marketing", or points at a doc that sounds generated. Grammar stays correct and professional; only the AI cadence goes.
+description: Rewrite or draft prose (READMEs, docs, release notes, landing copy, PR descriptions, commit bodies) so it reads like a working engineer wrote it rather than an LLM. Strips the AI tells: em-dashes, inline emphasis bolding, "X, not Y" antithesis, punchy fragment closers, cryptic section titles, fake-profound restatements, emoji decoration, inflated changelog verbs. Use when writing or editing any human-facing prose, or when the user says "humanize this", "make this sound less AI", "this reads like marketing", or points at a doc that sounds generated. Grammar stays correct and professional; only the AI cadence goes.
 ---
 
 # Humanizer
@@ -9,7 +9,7 @@ Make written prose read like a competent engineer wrote it for other engineers. 
 
 Scope: technical and product prose, meaning docs, READMEs, release notes, PR descriptions, and similar. If the user explicitly asks for marketing flair or a personal essay voice, their ask wins; this skill defines the default register, where flourish reads as generated.
 
-The tells below are specific and mechanical. All of them appeared in one real LLM-generated project README, and each has a concrete before/after taken from it.
+The tells below are specific and mechanical. Most appeared in one real LLM-generated project README, and the before/after examples are taken from it; the rest come from typical generated changelogs and feature pages.
 
 ## The core test
 
@@ -69,7 +69,25 @@ Section headings should say what the section is about in plain words a reader ca
 - Before: `## Your cursor follows the branch`
 - After: `## Branch switching` (or `## How it works across git branches`)
 
-### 7. Other model habits to drop
+### 7. Throat-clearing and inflated diction
+Openers that delay the point, and verbs that dress it up. Delete the preamble and the sentence usually survives; swap the inflated verb for the plain one.
+
+- "It's worth noting that", "Note that", "Importantly,", "Crucially,": cut the preamble and keep the sentence.
+- "Leverage" and "utilize" mean "use". "Enhanced", "streamlined", and "improved" in a changelog say nothing; name the actual change.
+- "This allows you to..." / "This enables...": make the reader the subject ("You can...").
+
+- Before: `Enhanced the import flow to deliver a more streamlined experience.`
+- After: `Import no longer drops the source URL when a recipe has no photo.`
+
+### 8. Decoration and uniform structure
+These operate at the document level rather than the sentence level, and readers pick up on them just as fast.
+
+- No emoji in a technical doc's headings, bullets, or section markers (`## 🚀 Quick Start`).
+- Uniform structure reads generated: every section with exactly three bullets, every bullet the same grammatical shape, every paragraph the same length. Let the content set the shape.
+- Bullets are for enumerable facts. An explanation or argument belongs in prose; chopping it into bullets fragments the logic and reads like a slide.
+- Tables are for rows that share real columns. A two-column Feature/Description table is a list forced into a grid; use a list.
+
+### 9. Other model habits to drop
 - Three-beat lists for rhythm ("fast, reliable, and clean") when two items or a plain sentence would do.
 - Filler intensifiers: "incredibly", "seamlessly", "effortlessly", "powerful", "robust", "simply".
 - Sentence-fragment list cadence used as a flourish: "Many small features in one repo, each on its own branch, each keeping its own cursor, with no manual thread-tracking." Make it a real sentence.
@@ -86,6 +104,7 @@ Section headings should say what the section is about in plain words a reader ca
 - Uses normal sentences of varied length and doesn't manufacture rhythm.
 - Lets facts stand without a rhetorical frame around them.
 - Bolds and bullets to organize the page rather than to perform.
+- Uses contractions, and says "I" when one person wrote it. Avoiding them reads as stiff and generated, the same way flourish does; plain is a register, and stiff is a different failure.
 - Is willing to be plain and even a little flat. Plain writing reads as honest. Flourishes read as generated.
 
 ## Revision procedure
@@ -97,7 +116,8 @@ When handed a draft (or after writing one), do a dedicated pass:
 3. Read each paragraph's last sentence. If it's a fragment or a restatement that adds no fact, cut it.
 4. Find every "X, not Y" / "not A but B" construction. Keep at most one in the whole document; rewrite the rest as plain statements.
 5. Read every section heading cold. If it wouldn't tell a stranger what's in the section, rename it.
-6. Strip filler intensifiers and tagline closers.
-7. Read it out loud in your head. Anywhere it sounds like it's trying to impress, flatten it.
+6. Grep for the giveaway words and fix each hit: leverage, utilize, seamless, seamlessly, robust, powerful, effortless, effortlessly, incredibly, streamline, supercharge, delve, comprehensive, "worth noting". Strip tagline closers while you're there.
+7. Search for emoji. Remove them from headings, bullets, and section markers.
+8. Read it out loud in your head. Anywhere it sounds like it's trying to impress, flatten it.
 
 The output should be something an engineer who hates AI-sounding writing would read without flinching. When unsure between two phrasings, pick the plainer one.

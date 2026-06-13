@@ -11,7 +11,7 @@
       "name": "humanizer",
       "source": "./plugins/humanizer",
       "description": "Makes Claude write READMEs, docs, release notes, and PR descriptions like an engineer instead of an LLM: no em-dashes, no emphasis bolding, no rhetorical contrasts, no punchy closers, plain headings.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": { "name": "kidsmeal" }
     }
   ]

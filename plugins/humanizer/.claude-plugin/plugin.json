@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "humanizer",
   "displayName": "Humanizer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A writing skill that strips the AI cadence from generated prose: no em-dashes, no emphasis bolding, no rhetorical contrasts, no punchy closers, plain headings. Grammar stays correct; the doc stops sounding generated.",
   "author": {
     "name": "kidsmeal",
